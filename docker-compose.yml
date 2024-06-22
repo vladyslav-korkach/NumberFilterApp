@@ -1,0 +1,10 @@
+services:
+  numberfilterapp:
+    image: numberfilterapp
+    container_name: numberfilterapp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./input.xlsx:/app/input.xlsx
+      - ./output:/app/output

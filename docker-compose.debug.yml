@@ -1,0 +1,15 @@
+services:
+  numberfilterapp:
+    image: numberfilterapp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - configuration=Debug
+    container_name: numberfilterapp
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./input.xlsx:/app/input.xlsx
+      - ./output:/app/output
+      - ~/.vsdbg:/remote_debugger:rw
